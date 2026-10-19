@@ -1,0 +1,179 @@
+
+:root{
+  --paper:#fbfaf7; --paper-2:#f4f1ea; --ink:#23272b; --ink-2:#3d4349;
+  --muted:#6b7280; --line:#e4ded3; --line-2:#d6cfc2;
+  --cinnabar:#8c3b32; --cinnabar-soft:#b5605a; --celadon:#4a6b68;
+  --sans:"Inter","PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono","SFMono-Regular",Consolas,"Courier New",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--serif); font-size:16.5px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+a{color:var(--cinnabar); text-decoration:none}
+a:hover{text-decoration:underline; text-underline-offset:3px}
+
+/* ---------- 顶栏 ---------- */
+.topbar{
+  position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px;
+  padding:0 22px; height:56px; background:rgba(251,250,247,.92);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:baseline; gap:9px; font-family:var(--serif)}
+.brand .seal{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:26px;height:26px;border-radius:5px; background:var(--cinnabar);
+  color:#fff; font-size:14px; font-weight:700; letter-spacing:0;
+}
+.brand b{font-size:16.5px; letter-spacing:.5px}
+.brand span{font-size:12.5px; color:var(--muted); font-family:var(--sans)}
+.topbar .spacer{flex:1}
+.topbar nav{display:flex; gap:18px; font-family:var(--sans); font-size:13.5px}
+.topbar nav a{color:var(--ink-2)}
+.topbar nav a:hover{color:var(--cinnabar); text-decoration:none}
+.gh-btn{
+  font-family:var(--sans); font-size:13px; padding:5px 12px; border-radius:6px;
+  border:1px solid var(--line-2); color:var(--ink-2); background:var(--paper-2);
+}
+.gh-btn:hover{border-color:var(--cinnabar); color:var(--cinnabar); text-decoration:none}
+
+/* ---------- 布局 ---------- */
+.wrap{display:flex; max-width:1240px; margin:0 auto; align-items:flex-start}
+.side{
+  position:sticky; top:56px; flex:0 0 244px; height:calc(100vh - 56px);
+  overflow-y:auto; padding:26px 16px 60px 22px; border-right:1px solid var(--line);
+  font-family:var(--sans); font-size:14px;
+}
+.side h4{
+  margin:20px 0 8px; font-size:11px; letter-spacing:1.6px; text-transform:uppercase;
+  color:var(--muted); font-weight:600;
+}
+.side h4:first-child{margin-top:0}
+.side a{display:flex; align-items:center; gap:9px; padding:6px 9px; border-radius:6px; color:var(--ink-2)}
+.side a:hover{background:var(--paper-2); text-decoration:none; color:var(--ink)}
+.side a.on{background:#f0ebe1; color:var(--cinnabar); font-weight:600}
+.side .num{
+  flex:0 0 22px; text-align:center; font-family:var(--serif); font-size:12.5px;
+  color:var(--muted); border:1px solid var(--line-2); border-radius:4px; line-height:18px;
+}
+.side a.on .num{color:var(--cinnabar); border-color:var(--cinnabar-soft)}
+main{flex:1 1 auto; min-width:0; padding:34px 48px 100px; max-width:920px}
+
+/* ---------- 首页 hero ---------- */
+.hero{
+  border:1px solid var(--line); border-radius:14px; padding:38px 40px;
+  background:linear-gradient(160deg,#fdfcf9 0%,#f3efe6 100%);
+  position:relative; overflow:hidden; margin-bottom:34px;
+}
+.hero:after{
+  content:""; position:absolute; right:-60px; top:-60px; width:260px; height:260px;
+  border-radius:50%; background:radial-gradient(circle at 30% 30%,rgba(140,59,50,.10),transparent 62%);
+}
+.hero h1{
+  margin:0 0 6px; font-size:31px; line-height:1.35; letter-spacing:1px; font-weight:700;
+}
+.hero .sub{font-family:var(--sans); color:var(--ink-2); font-size:15.5px; margin-bottom:16px}
+.hero .lede{font-size:16.5px; color:var(--ink-2); max-width:640px}
+.hero .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; font-family:var(--sans)}
+.tag{
+  font-size:12.5px; padding:4px 11px; border-radius:99px; background:#fff;
+  border:1px solid var(--line-2); color:var(--ink-2);
+}
+.tag.red{background:var(--cinnabar); border-color:var(--cinnabar); color:#fff}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:16px; margin:28px 0}
+.card{
+  border:1px solid var(--line); border-radius:11px; padding:18px 20px; background:#fff;
+  transition:.18s;
+}
+.card:hover{border-color:var(--line-2); box-shadow:0 4px 16px rgba(0,0,0,.05); transform:translateY(-2px)}
+.card .ic{font-family:var(--serif); font-size:20px; color:var(--cinnabar); font-weight:700}
+.card h3{margin:6px 0 6px; font-size:17px; letter-spacing:.5px}
+.card p{margin:0; font-family:var(--sans); font-size:13.5px; color:var(--muted); line-height:1.7}
+
+/* ---------- 正文排版 ---------- */
+.markdown h1{font-size:27px; margin:0 0 18px; letter-spacing:.8px; padding-bottom:12px; border-bottom:2px solid var(--cinnabar)}
+.markdown h1:not(:first-child){margin-top:46px}
+.markdown h2{
+  font-size:21px; margin:40px 0 14px; letter-spacing:.6px; padding-left:12px;
+  border-left:4px solid var(--cinnabar); line-height:1.5;
+}
+.markdown h3{font-size:17.5px; margin:30px 0 10px; letter-spacing:.4px; color:var(--ink)}
+.markdown h4{font-size:15.5px; margin:22px 0 8px; color:var(--ink-2); font-family:var(--sans)}
+.markdown p{margin:0 0 15px; text-align:justify}
+.markdown ul,.markdown ol{padding-left:1.4em; margin:0 0 16px}
+.markdown li{margin:5px 0}
+.markdown li>ul,.markdown li>ol{margin:5px 0}
+.markdown hr{border:0; border-top:1px solid var(--line); margin:38px 0}
+
+.markdown blockquote{
+  margin:20px 0; padding:14px 20px; background:#f7f4ec;
+  border-left:3px solid var(--cinnabar-soft); border-radius:0 8px 8px 0; color:var(--ink-2);
+}
+.markdown blockquote p:last-child{margin-bottom:0}
+.markdown blockquote strong{color:var(--cinnabar)}
+
+.markdown table{
+  width:100%; border-collapse:collapse; margin:22px 0; font-size:14.5px;
+  font-family:var(--sans); line-height:1.65;
+}
+.markdown thead th{
+  background:#f0ece2; text-align:left; padding:10px 12px; font-weight:600;
+  border-bottom:2px solid var(--line-2); color:var(--ink); white-space:nowrap;
+}
+.markdown td{padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+.markdown tbody tr:hover{background:#fdfcf9}
+
+.markdown code{
+  font-family:var(--mono); font-size:.88em; background:#f0ece2;
+  padding:2px 6px; border-radius:4px; color:var(--cinnabar);
+}
+.markdown pre{
+  background:#2b2f33; color:#e8e6e3; padding:16px 18px; border-radius:9px;
+  overflow-x:auto; margin:20px 0; line-height:1.7;
+}
+.markdown pre code{background:none; color:inherit; padding:0; font-size:13.5px}
+.markdown .small{font-size:12.5px; color:var(--muted)}
+
+.markdown input[type=checkbox]{margin-right:6px; accent-color:var(--cinnabar)}
+.markdown li.task-list-item{list-style:none; margin-left:-1.2em}
+
+/* ---------- 首页专用 ---------- */
+.steps{display:flex; gap:10px; flex-wrap:wrap; margin:22px 0; font-family:var(--sans); font-size:13.5px}
+.step{
+  flex:1 1 150px; border:1px solid var(--line); border-radius:9px; padding:13px 15px; background:#fff;
+}
+.step b{display:block; font-family:var(--serif); font-size:15px; margin-bottom:3px}
+.step span{color:var(--muted); font-size:12.5px}
+
+.flag{list-style:none; padding:0; margin:16px 0}
+.flag li{
+  padding:7px 0 7px 26px; border-bottom:1px dashed var(--line); position:relative; font-size:15px;
+}
+.flag li:before{
+  content:"⚑"; position:absolute; left:2px; color:var(--cinnabar); font-size:13px;
+}
+.flag li:last-child{border-bottom:0}
+
+.pager{display:flex; justify-content:space-between; gap:14px; margin:56px 0 0; padding-top:22px; border-top:1px solid var(--line); font-family:var(--sans); font-size:14px}
+.pager a{padding:9px 16px; border:1px solid var(--line-2); border-radius:8px; background:#fff}
+.pager a:hover{border-color:var(--cinnabar); text-decoration:none}
+
+footer{
+  border-top:1px solid var(--line); margin-top:0; padding:26px 48px 40px;
+  font-family:var(--sans); font-size:12.5px; color:var(--muted); max-width:1240px; margin:0 auto;
+}
+
+@media (max-width:900px){
+  .side{display:none}
+  main{padding:22px 20px 70px}
+  .hero{padding:26px 22px}
+  .hero h1{font-size:24px}
+  footer{padding:22px 20px}
+  .topbar nav{display:none}
+}
