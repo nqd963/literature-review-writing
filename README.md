@@ -8,7 +8,7 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-通用%20SKILL.md-4a6b68?style=flat-square)](SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[在线阅读 →](https://nqd963.github.io/literature-review-writing/) ｜ [领域地图](references/domain-ancient-literature.md) ｜ [范文解剖](references/worked-examples.md) ｜ [检查表](references/checklist-ancient-literature.md)
+[在线阅读 →](https://nqd963.github.io/literature-review-writing/) ｜ [领域地图](references/domain-ancient-literature.md) ｜ [范文解剖](references/worked-examples.md) ｜ [检查表](references/checklist-ancient-literature.md) ｜ [参考文献](REFERENCES.md)
 
 </div>
 
@@ -79,6 +79,7 @@
 | [`references/checklist-ancient-literature.md`](references/checklist-ancient-literature.md) | 领域自检 60 项 + 硬伤 10 条 + 最后三问 |
 | `references/stage1-4*.md` | 通用层准则全集（来自 Galvan，已标注领域例外） |
 | [`scripts/init_review_workspace.py`](scripts/init_review_workspace.py) | 一行命令生成工作目录（笔记表、检索日志、版本谱系、论点表、大纲、检查表） |
+| [`REFERENCES.md`](REFERENCES.md) | **参考文献**：本指南的编写依据，按 GB/T 7714—2025 顺序编码制著录 ｜ [在线版](https://nqd963.github.io/literature-review-writing/bib.html) |
 
 ---
 

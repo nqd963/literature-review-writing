@@ -9,6 +9,7 @@
 </head>
 <body>
 <header class="topbar">
+  <span class="prog"></span>
   <div class="brand"><span class="seal">綜</span><b>文献综述写作</b><span>中国古代文学</span></div>
   <div class="spacer"></div>
   <nav>
@@ -16,32 +17,28 @@
     <a href="domain.html">领域地图</a>
     <a href="examples.html">范文解剖</a>
     <a href="checklist.html">检查表</a>
+    <a href="bib.html">参考文献</a>
   </nav>
   <a class="gh-btn" href="https://github.com/nqd963/literature-review-writing" target="_blank">GitHub</a>
 </header>
 <div class="wrap">
 <aside class="side">
 <h4>指南</h4>
-<a href="index.html"><i class="num">序</i>首页</a>
-<a class="" href="domain.html"><i class="num">壹</i>领域地图</a>
-<a class="" href="examples.html"><i class="num">贰</i>范文解剖</a>
-<a class="" href="search.html"><i class="num">叁</i>检索资源</a>
-<a class="" href="history.html"><i class="num">肆</i>学术史与汉学</a>
-<a class="" href="editions.html"><i class="num">伍</i>版本与引文</a>
-<a class="on" href="templates.html"><i class="num">陆</i>表式与句式</a>
-<a class="" href="checklist.html"><i class="num">柒</i>领域检查表</a>
-<a class="" href="pipeline.html"><i class="num">捌</i>四阶段流程</a>
+<a class="" href="index.html"><i class="num">序</i>首页</a>
+<a class="" href="domain.html"><i class="num">壹</i>领域地图</a><a class="" href="examples.html"><i class="num">贰</i>范文解剖</a><a class="" href="search.html"><i class="num">叁</i>检索资源</a><a class="" href="history.html"><i class="num">肆</i>学术史与汉学</a><a class="" href="editions.html"><i class="num">伍</i>版本与引文</a><a class="on" href="templates.html"><i class="num">陆</i>表式与句式</a><a class="" href="checklist.html"><i class="num">柒</i>领域检查表</a><a class="" href="pipeline.html"><i class="num">捌</i>四阶段流程</a><a class="" href="bib.html"><i class="num">玖</i>参考文献</a>
 <h4>资源</h4>
 <a href="https://github.com/nqd963/literature-review-writing" target="_blank"><i class="num">↗</i>GitHub 仓库</a>
 </aside>
 <main>
-<div class="markdown"><h1 id="_1">古代文学综述：表式、大纲与句式模板</h1>
+<div class="grid">
+<div class="markdown">
+<h1>古代文学综述：表式、大纲与句式模板</h1>
 <blockquote>
 <p>直接复制到你的工作目录使用。字段可以增删，但<strong>版本、卷次、页/叶、引文核对</strong>四栏不要删。</p>
 </blockquote>
 <hr />
-<h2 id="notescsv">一、文献笔记表（notes.csv）</h2>
-<h3 id="_2">字段说明</h3>
+<h2 id="sec-1">一、文献笔记表（notes.csv）<a class="anchor" href="#sec-1">#</a></h2>
+<h3 id="sec-2">字段说明<a class="anchor" href="#sec-2">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -183,10 +180,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="csv">CSV 表头（可直接使用）</h3>
+<h3 id="sec-3">CSV 表头（可直接使用）<a class="anchor" href="#sec-3">#</a></h3>
 <pre><code class="language-csv">编号,大纲编号,作者,出版年份,标题,期刊/出版社,文献类型,研究对象,时段,文体,核心论点,使用材料,研究方法,版本/整理者,关键引文,卷次/篇名,页码/叶,引文核对,学术史位置,与既有研究关系,争议/分歧,证据强度,主要局限,我的评析,检索来源/日期,备注
 </code></pre>
-<h3 id="_3">填写纪律</h3>
+<h3 id="sec-4">填写纪律<a class="anchor" href="#sec-4">#</a></h3>
 <ul>
 <li>"核心论点"必须是你自己的话，不能复制摘要。</li>
 <li>"使用材料"要具体到版本/总集/年谱，不写"相关文献"。</li>
@@ -195,7 +192,7 @@
 <li>关键引文只记<strong>短句</strong>，长段用转述；记下页码/叶，后面省大量时间。</li>
 </ul>
 <hr />
-<h2 id="search-logcsv">二、检索日志（search-log.csv）</h2>
+<h2 id="sec-5">二、检索日志（search-log.csv）<a class="anchor" href="#sec-5">#</a></h2>
 <pre><code class="language-csv">日期,数据库/平台,检索式,字段/限定,命中数,纳入数,排除理由,备注
 </code></pre>
 <table>
@@ -244,7 +241,7 @@
 <p>写"研究空白"时，把这张表的关键行整理成一段检索说明，放在综述开头或空白点之前。</p>
 </blockquote>
 <hr />
-<h2 id="editionscsv">三、版本谱系表（editions.csv）</h2>
+<h2 id="sec-6">三、版本谱系表（editions.csv）<a class="anchor" href="#sec-6">#</a></h2>
 <pre><code class="language-csv">书名,作者/编者,卷数,成书/刊刻年代,版本类型,藏地/索书号,存佚/完缺,递藏,影印/整理本,校勘价值,备注
 </code></pre>
 <table>
@@ -301,7 +298,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_4">版本谱系示意</h3>
+<h3 id="sec-7">版本谱系示意<a class="anchor" href="#sec-7">#</a></h3>
 <pre><code class="language-text">祖本（宋刻本）
   ├─ 明翻刻本
   │    ├─ 清初递修本
@@ -311,7 +308,7 @@
             └─ 现代点校本（底本：宋刻本；参校：明翻刻、清批校）
 </code></pre>
 <hr />
-<h2 id="claimscsv">四、论点—证据—反证表（claims.csv）</h2>
+<h2 id="sec-8">四、论点—证据—反证表（claims.csv）<a class="anchor" href="#sec-8">#</a></h2>
 <pre><code class="language-csv">编号,论点,支撑文献,证据类型,证据强度,反证/异说,本文判断,状态
 </code></pre>
 <table>
@@ -356,7 +353,7 @@
 <p>这张表是防止"以论代史"的最有效工具：<strong>先填反证栏，再填支撑栏。</strong></p>
 </blockquote>
 <hr />
-<h2 id="_5">五、概念/范畴定义表</h2>
+<h2 id="sec-9">五、概念/范畴定义表<a class="anchor" href="#sec-9">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -409,7 +406,7 @@
 - "现代解释"注明谁的解释。
 - "本文用法"必须明确，不能含糊。</p>
 <hr />
-<h2 id="_6">六、争议表</h2>
+<h2 id="sec-10">六、争议表<a class="anchor" href="#sec-10">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -466,7 +463,7 @@
 - "材料/方法差异"是解释分歧的钥匙：版本不同？概念不同？理论预设不同？
 - "本文判断"要给理由；无法判断时写"暂存疑，待新材"。</p>
 <hr />
-<h2 id="_7">七、学术史地图</h2>
+<h2 id="sec-11">七、学术史地图<a class="anchor" href="#sec-11">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -549,7 +546,7 @@
 <p>每一格都要有具体问题与判断；"成果丰富""方法多样"不算填写。</p>
 </blockquote>
 <hr />
-<h2 id="_8">八、引文核对表</h2>
+<h2 id="sec-12">八、引文核对表<a class="anchor" href="#sec-12">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -586,14 +583,14 @@
 - 原书：图书馆阅藏。
 - 转引：注明"转引自"，并尽量回查。</p>
 <hr />
-<h2 id="_9">九、主题大纲骨架</h2>
-<h3 id="_10">三条硬规则（搭提纲前先看）</h3>
+<h2 id="sec-13">九、主题大纲骨架<a class="anchor" href="#sec-13">#</a></h2>
+<h3 id="sec-14">三条硬规则（搭提纲前先看）<a class="anchor" href="#sec-14">#</a></h3>
 <ol>
 <li><strong>三级封顶。</strong> 一级（研究问题）→ 二级（切入角度）→ 三级（方法再分）。<strong>三级以下不再细分</strong>——分类太碎，综述就变成流水账。</li>
 <li><strong>堆的形状就是提纲。</strong> 不要先想提纲再找文献，<strong>先把文献分堆</strong>，堆的形状决定了你的章节该怎么切（见 <code>worked-examples.md</code> 第七节）。</li>
 <li><strong>考证单列。</strong> 系年、版本、辑佚、辨伪、生平交游必须单独设一节，不要散进各章。</li>
 </ol>
-<h3 id="_11">引言三段式（可直接填空）</h3>
+<h3 id="sec-15">引言三段式（可直接填空）<a class="anchor" href="#sec-15">#</a></h3>
 <pre><code>【底本状况】《XX》著录 X 篇，今存 X 篇，其中《A》《B》《C》为全篇，
            《D》存残篇，《E》存在争议（甲疑为伪作，乙、丙认为非 XX 无疑，
            本文从乙、丙说）。
@@ -607,7 +604,7 @@
 <blockquote>
 <p>这是古代文学综述的"规矩"：<strong>先给读者一个文献底数</strong>，再谈研究史。社科综述没有这一步。</p>
 </blockquote>
-<h3 id="a">A. 专题研究综述（学术史分期式）</h3>
+<h3 id="sec-16">A. 专题研究综述（学术史分期式）<a class="anchor" href="#sec-16">#</a></h3>
 <pre><code class="language-markdown">主题：（研究对象 + 时段 + 文体 + 核心问题，一句话）
 核心问题：
 本文论点：
@@ -651,7 +648,7 @@
   B. 版本谱系表
   C. 引文核对表
 </code></pre>
-<h3 id="b">B. 问题/争议式</h3>
+<h3 id="sec-17">B. 问题/争议式<a class="anchor" href="#sec-17">#</a></h3>
 <pre><code class="language-markdown">一、问题的提出
 二、争议一：作者/成书/系年
   A. 甲说：主张、证据、推论
@@ -665,7 +662,7 @@
 五、未决问题与本文切入点
 六、结论
 </code></pre>
-<h3 id="c">C. 学位论文文献综述章</h3>
+<h3 id="sec-18">C. 学位论文文献综述章<a class="anchor" href="#sec-18">#</a></h3>
 <pre><code class="language-markdown">第二章 研究现状与问题
   第一节 概念界定与研究范围
   第二节 文献与版本基础
@@ -677,7 +674,7 @@
   第四节 核心争议与研究方法反思
   第五节 研究空白与本文切入点
 </code></pre>
-<h3 id="d">D. 开题报告</h3>
+<h3 id="sec-19">D. 开题报告<a class="anchor" href="#sec-19">#</a></h3>
 <pre><code class="language-markdown">一、选题缘起与意义
 二、研究现状
   1. 大陆研究
@@ -689,57 +686,57 @@
 五、可行性、进度与预期贡献
 </code></pre>
 <hr />
-<h2 id="_12">十、句式库</h2>
-<h3 id="_13">界定范围</h3>
+<h2 id="sec-20">十、句式库<a class="anchor" href="#sec-20">#</a></h2>
+<h3 id="sec-21">界定范围<a class="anchor" href="#sec-21">#</a></h3>
 <ul>
 <li>"本文所论……，指……，不包括……。"</li>
 <li>"为讨论方便，本文将……限定为……，其文本依据是……。"</li>
 <li>"本文以……为底本，参校……，凡引文未特别说明者，均据此本。"</li>
 </ul>
-<h3 id="_14">概括趋势</h3>
+<h3 id="sec-22">概括趋势<a class="anchor" href="#sec-22">#</a></h3>
 <ul>
 <li>"近二十年来，……研究大致沿着三条路径展开：……、……与……。"</li>
 <li>"从……到……，学界关注的重心由……转向……。"</li>
 <li>"这一阶段的讨论，较之前期更重视……，但在……方面仍有不足。"</li>
 </ul>
-<h3 id="_15">指出分歧</h3>
+<h3 id="sec-23">指出分歧<a class="anchor" href="#sec-23">#</a></h3>
 <ul>
 <li>"围绕……，学界形成了两种主要解释。一种认为……，另一种则主张……。"</li>
 <li>"分歧的焦点不在……，而在……。"</li>
 <li>"两说所据材料不同：甲说依赖……，乙说则利用……。"</li>
 </ul>
-<h3 id="_16">评价方法</h3>
+<h3 id="sec-24">评价方法<a class="anchor" href="#sec-24">#</a></h3>
 <ul>
 <li>"该研究的推进在于……，但其局限也在于……。"</li>
 <li>"作者使用了……，使……得以呈现；然而，……的处理仍显粗略。"</li>
 <li>"这一结论建立在……之上；若……，则结论需要修正。"</li>
 </ul>
-<h3 id="_17">指出空白</h3>
+<h3 id="sec-25">指出空白<a class="anchor" href="#sec-25">#</a></h3>
 <ul>
 <li>"就笔者目力所及，尚未见以……为对象的专题研究。需要说明的是，本文的检索范围限于……。"</li>
 <li>"已有研究多集中于……，对……的关注相对不足。"</li>
 <li>"这一空白并非因为问题不重要，而是因为……（材料/方法/学科分工）。"</li>
 </ul>
-<h3 id="_18">引出本文</h3>
+<h3 id="sec-26">引出本文<a class="anchor" href="#sec-26">#</a></h3>
 <ul>
 <li>"有鉴于此，本文拟以……为对象，利用……，回答……。"</li>
 <li>"本文不试图全面推翻旧说，而是希望在前人基础上，补充……、修正……。"</li>
 <li>"与既有研究相比，本文的推进主要有三：……。"</li>
 </ul>
-<h3 id="_19">结论（不用"证明"）</h3>
+<h3 id="sec-27">结论（不用"证明"）<a class="anchor" href="#sec-27">#</a></h3>
 <ul>
 <li>"根据现有研究，似乎可以得出这样的判断：……。"</li>
 <li>"证据表明……；但这一判断仍受限于……。"</li>
 <li>"尽管多数研究支持……，但……的研究也提示……。在缺乏……的情况下，尚难定论。"</li>
 </ul>
-<h3 id="_20">未来研究</h3>
+<h3 id="sec-28">未来研究<a class="anchor" href="#sec-28">#</a></h3>
 <ul>
 <li>"未来的研究可优先利用……（新材/新版本/新数据库），重新检验……。"</li>
 <li>"……群体/文体/地域尚未得到充分研究，值得专题考察。"</li>
 <li>"若能将……与……结合，或可突破当前……的瓶颈。"</li>
 </ul>
 <hr />
-<h2 id="_21">十一、表格准入标准</h2>
+<h2 id="sec-29">十一、表格准入标准<a class="anchor" href="#sec-29">#</a></h2>
 <p>综述正文中的表格不宜多。只在以下情况使用：</p>
 <ol>
 <li><strong>版本谱系复杂</strong>，文字难以说清。</li>
@@ -753,7 +750,7 @@
 - 表格只放关键项，不要把笔记表原样搬进正文。
 - 跨页时表底标"（续）"，下页重复表号 + "（续）"。</p>
 <hr />
-<h2 id="_22">十二、一页式工作流</h2>
+<h2 id="sec-30">十二、一页式工作流<a class="anchor" href="#sec-30">#</a></h2>
 <pre><code class="language-text">1. 写主题说明（对象+时段+文体+问题+版本范围）
 2. 建 search-log.csv，先搜 3–5 篇综述/博士论文
 3. 反向/正向追踪，建 notes.csv
@@ -769,11 +766,46 @@
 </code></pre>
 <blockquote>
 <p>配套文件：<a href="domain.html">domain-ancient-literature.md</a>、<a href="search.html">search-resources.md</a>、<a href="editions.html">editions-and-citations.md</a>、<a href="checklist.html">checklist-ancient-literature.md</a>。</p>
-</blockquote></div>
+</blockquote>
+</div>
+<nav class="toc"><div class="t-h">本页目录</div><a class="" href="#sec-1">一、文献笔记表（notes.csv）</a><a class="lv3" href="#sec-2">字段说明</a><a class="lv3" href="#sec-3">CSV 表头（可直接使用）</a><a class="lv3" href="#sec-4">填写纪律</a><a class="" href="#sec-5">二、检索日志（search-log.csv）</a><a class="" href="#sec-6">三、版本谱系表（editions.csv）</a><a class="lv3" href="#sec-7">版本谱系示意</a><a class="" href="#sec-8">四、论点—证据—反证表（claims.csv）</a><a class="" href="#sec-9">五、概念/范畴定义表</a><a class="" href="#sec-10">六、争议表</a><a class="" href="#sec-11">七、学术史地图</a><a class="" href="#sec-12">八、引文核对表</a><a class="" href="#sec-13">九、主题大纲骨架</a><a class="lv3" href="#sec-14">三条硬规则（搭提纲前先看）</a><a class="lv3" href="#sec-15">引言三段式（可直接填空）</a><a class="lv3" href="#sec-16">A. 专题研究综述（学术史分期式）</a><a class="lv3" href="#sec-17">B. 问题/争议式</a><a class="lv3" href="#sec-18">C. 学位论文文献综述章</a><a class="lv3" href="#sec-19">D. 开题报告</a><a class="" href="#sec-20">十、句式库</a><a class="lv3" href="#sec-21">界定范围</a><a class="lv3" href="#sec-22">概括趋势</a><a class="lv3" href="#sec-23">指出分歧</a><a class="lv3" href="#sec-24">评价方法</a><a class="lv3" href="#sec-25">指出空白</a><a class="lv3" href="#sec-26">引出本文</a><a class="lv3" href="#sec-27">结论（不用"证明"）</a><a class="lv3" href="#sec-28">未来研究</a><a class="" href="#sec-29">十一、表格准入标准</a><a class="" href="#sec-30">十二、一页式工作流</a></nav>
+</div>
 <div class="pager"><a href="editions.html">← 版本与引文</a><a href="checklist.html">领域检查表 →</a></div>
 </main>
 </div>
-<footer>遵循 <b>Agent Skills 开放规范</b>，可在任何支持该规范的 harness 中加载（Claude Code / Codex CLI / WorkBuddy / Cursor 等）·
-内容基于 Galvan &amp; Galvan《Writing Literature Reviews》四阶段骨架，按中国古代文学的领域规则重写</footer>
+<button id="totop" title="回到顶部">↑</button>
+<footer>
+  <div class="f-links">
+    <a href="https://github.com/nqd963/literature-review-writing">GitHub 仓库</a>
+    <a href="bib.html">参考文献</a>
+    <a href="domain.html">领域地图</a>
+    <a href="examples.html">范文解剖</a>
+    <a href="checklist.html">领域检查表</a>
+  </div>
+  遵循 <b>Agent Skills 开放规范</b>，可在任何支持该规范的 harness 中加载（Claude Code / Codex CLI / WorkBuddy / Cursor 等）·
+  内容基于 Galvan &amp; Galvan《Writing Literature Reviews》四阶段骨架，按中国古代文学的领域规则重写
+</footer>
+<script>
+(function(){
+  var bar=document.querySelector('.topbar .prog'), top=document.getElementById('totop');
+  function onScroll(){
+    var h=document.documentElement, sc=h.scrollTop||document.body.scrollTop;
+    var max=(h.scrollHeight-h.clientHeight)||1;
+    if(bar) bar.style.width=Math.min(100,sc/max*100)+'%';
+    if(top) top.classList.toggle('show', sc>420);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(top) top.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))}).filter(Boolean);
+  if(!heads.length) return;
+  function mark(){
+    var best=0;
+    heads.forEach(function(el,i){ if(el.getBoundingClientRect().top<=140) best=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on', i===best); });
+  }
+  addEventListener('scroll',mark,{passive:true}); mark();
+})();
+</script>
 </body>
 </html>
