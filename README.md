@@ -5,7 +5,7 @@
 **把「读过一堆论文」变成「对某一问题的研究史做出有根据的判断」**
 
 [![文档站](https://img.shields.io/badge/文档站-GitHub%20Pages-8c3b32?style=flat-square)](https://nqd963.github.io/literature-review-writing/)
-[![Skill](https://img.shields.io/badge/WorkBuddy-Skill-4a6b68?style=flat-square)](SKILL.md)
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-通用%20SKILL.md-4a6b68?style=flat-square)](SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
 [在线阅读 →](https://nqd963.github.io/literature-review-writing/) ｜ [领域地图](references/domain-ancient-literature.md) ｜ [范文解剖](references/worked-examples.md) ｜ [检查表](references/checklist-ancient-literature.md)
@@ -16,9 +16,11 @@
 
 ## 这是什么
 
-一套面向**中国古代文学**（先秦至近代，含诗、词、文、赋、小说、戏曲、文论）的文献综述写作方法论，可直接作为 [WorkBuddy](https://www.workbuddy.cn) / Claude Code 的 **Skill** 使用，也能当作独立手册阅读。
+一套面向**中国古代文学**（先秦至近代，含诗、词、文、赋、小说、戏曲、文论）的文献综述写作方法论。
 
-它保留了 Galvan & Galvan《Writing Literature Reviews》的四阶段骨架与综合纪律，但把**检索对象、证据标准、结构方式、引文体例全部换成了中国古代文学的领域规则**：
+它采用 **Agent Skills 开放规范**（一个 `SKILL.md` + YAML frontmatter + 可选的 `references/`、`scripts/`），因此**不绑定任何特定产品**——任何实现了该规范的 harness（Claude Code、Codex CLI、WorkBuddy、Cursor 等）都能直接加载；不接 Agent 时，也可以当作一本独立手册阅读。
+
+内容上，它保留了 Galvan & Galvan《Writing Literature Reviews》的四阶段骨架与综合纪律，但把**检索对象、证据标准、结构方式、引文体例全部换成了中国古代文学的领域规则**：
 
 > **文献学与文艺学相结合。** 版本、校勘、系年、辨伪是地基；阐释、审美判断、文学史定位是建筑。没有地基的阐释站不住，没有阐释的考订不成文学研究。
 
@@ -80,18 +82,36 @@
 
 ---
 
-## 安装
+## 安装：放进任何 harness 的 skills 目录
 
-作为 Skill 使用（WorkBuddy / Claude Code）：
+本仓库遵循 **Agent Skills 开放规范**，目录结构本身就是全部约定：
 
-```bash
-# 复制到用户级技能目录
-cp -r literature-review-writing ~/.workbuddy/skills/
+```
+literature-review-writing/
+├── SKILL.md              # 必需：name + description 的 YAML frontmatter，触发入口
+├── references/           # 可选：按需渐进加载的分册
+└── scripts/              # 可选：可执行的辅助脚本
 ```
 
-触发方式：直接说"帮我写某某主题的文献综述""研究现状怎么写""开题报告的文献综述"即可。
+**通用做法**：把整个目录复制到你的 harness 的 skills 目录下即可。常见位置（以各工具官方文档为准）：
 
-只想当作手册阅读：打开[在线文档站](https://nqd963.github.io/literature-review-writing/)或直接看上面的 md 文件。
+| Harness | 用户级目录 | 项目级目录 |
+|---|---|---|
+| Claude Code | `~/.claude/skills/` | `.claude/skills/` |
+| Codex CLI | `~/.codex/skills/` | `.codex/skills/` |
+| WorkBuddy | `~/.workbuddy/skills/` | `.workbuddy/skills/` |
+| Cursor / 其他遵循该规范的工具 | 见各自文档 | 项目内 `skills/` |
+
+```bash
+# 例：安装到 Claude Code
+cp -r literature-review-writing ~/.claude/skills/
+```
+
+> 若你的工具只认单文件，也可以只拷贝 `SKILL.md`；但渐进加载的分册（`references/`）是大头，建议整体安装。
+
+**触发方式**：装好后直接说"帮我写某某主题的文献综述""研究现状怎么写""开题报告的文献综述"即可。
+
+**只想当作手册阅读**：打开[在线文档站](https://nqd963.github.io/literature-review-writing/)或直接看上面的 md 文件。
 
 ### 起手工具
 
