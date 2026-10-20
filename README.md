@@ -72,13 +72,14 @@
 | [`SKILL.md`](SKILL.md) | 入口：心智模型、四阶段流程、红旗清单 18 条 |
 | [`references/domain-ancient-literature.md`](references/domain-ancient-literature.md) | **领域地图**：四个特殊性、选题边界、时段/文体差异、五种结构范式、学术史写法 |
 | [`references/worked-examples.md`](references/worked-examples.md) | **范文解剖**：陆游篇（通代）与贾谊篇（断代）逐节拆解、实操配方、十步 SOP |
+| [`references/model-passage.md`](references/model-passage.md) | **示范段落**：一段可照着仿写的正文 + 逐句批注 + 反面对照（动笔前读） |
 | [`references/search-resources.md`](references/search-resources.md) | 古籍库、研究库、资料汇编、海外汉学、关键词矩阵、引文追踪、检索日志 |
 | [`references/academic-history-and-overseas.md`](references/academic-history-and-overseas.md) | 20 世纪以来四条脉络、港台/日本/欧美传统、核心争论 |
 | [`references/editions-and-citations.md`](references/editions-and-citations.md) | 版本学、陈垣校法四例、辨伪辑佚、脚注规范、GB/T 7714—2025 |
 | [`references/templates-domain.md`](references/templates-domain.md) | 笔记表、检索日志、版本谱系表、论点—证据表、大纲骨架、句式库 |
-| [`references/checklist-ancient-literature.md`](references/checklist-ancient-literature.md) | 领域自检 60 项 + 硬伤 10 条 + 最后三问 |
-| `references/stage1-4*.md` | 通用层准则全集（来自 Galvan，已标注领域例外） |
-| [`scripts/init_review_workspace.py`](scripts/init_review_workspace.py) | 一行命令生成工作目录（笔记表、检索日志、版本谱系、论点表、大纲、检查表） |
+| [`references/checklist-ancient-literature.md`](references/checklist-ancient-literature.md) | 领域自检 60 项 + 硬伤 10 条 + 附录语言格式 20 条 + 最后三问 |
+| `references/stage1-4*.md` | 通用层写作要点（据 Galvan 四阶段框架改写，已领域化；不含原书章节编号与逐条中译） |
+| [`scripts/init_review_workspace.py`](scripts/init_review_workspace.py) | 一行命令生成工作目录（课题卡、笔记表、检索日志、版本谱系、论点表、大纲、检查表） |
 | [`REFERENCES.md`](REFERENCES.md) | **参考文献**：本指南的编写依据，按 GB/T 7714—2025 顺序编码制著录 ｜ [在线版](https://nqd963.github.io/literature-review-writing/bib.html) |
 
 ---
@@ -117,10 +118,13 @@ cp -r literature-review-writing ~/.claude/skills/
 ### 起手工具
 
 ```bash
-python scripts/init_review_workspace.py <目标目录> --topic "贾谊赋研究（1980–2025）"
+python scripts/init_review_workspace.py <目标目录> \
+  --topic "贾谊赋研究" --since 1980 --until 2025
 ```
 
-生成 6 个文件：`notes.csv`（26 字段笔记表）、`search-log.csv`、`editions.csv`、`claims.csv`、`outline.md`、`checklist.md`。仅用标准库，CSV 带 BOM，Excel 双击不乱码。
+生成 7 个文件：`project.md`（课题卡：三条边界 + 检索时间范围 + 建卡日期）、`notes.csv`（26 字段笔记表）、`search-log.csv`、`editions.csv`、`claims.csv`、`outline.md`、`checklist.md`。仅用标准库，CSV 带 BOM，Excel 双击不乱码。
+
+`--since/--until` 会同时写进课题卡、大纲与检索日志示例行。**检索时间范围是综述最常漏、也最容易被答辩追问的一项**：说不出检索到哪一年，"研究空白"就不成立。省略 `--until` 时默认取当前年份。
 
 ---
 
@@ -168,10 +172,11 @@ python scripts/init_review_workspace.py <目标目录> --topic "贾谊赋研究�
 
 ## 来源
 
-- 骨架：Galvan, J. L. & Galvan, M. C. *Writing Literature Reviews*（第七版），中译本《文献综述写作》。
+- 骨架：Galvan, J. L. & Galvan, M. C. *Writing Literature Reviews*（第七版），中译本《文献综述写作》。**仅取其四阶段流程、综合纪律与评价标准，并已全部改写为古代文学语境；原书的章节编号、英文示例、附录逐条清单均未收录。** 需要完整方法论请直接读原书。见 [REFERENCES.md](REFERENCES.md)。
 - 中文期刊体裁要件：陈立宏、李旭、吴永康、刘艳《关于研究生文献综述撰写的几点建议》，《教育教学论坛》2022 年第 31 期。
 - 领域范例：李建英《陆游诗研究综述》（《北京青年政治学院学报》2009 年第 3 期）、李怡蕾《近四十年来贾谊赋研究综述》（《宁夏师范学院学报》2020 年第 8 期）。
 - 引文规范：GB/T 7714—2025《信息与文献 参考文献著录规则》。
+- 海外汉学人名与学派归属、部分范文参考文献条目转录自上述论文，**未逐条回查原刊**，相关处已标〔待核〕。
 
 ---
 

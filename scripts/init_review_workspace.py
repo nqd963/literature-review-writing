@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """初始化一个中国古代文学文献综述工作目录。
 
-产出六件套：
+产出七件套：
+  project.md       —— 课题卡：主题 + 三条边界 + 检索时间范围 + 建卡日期
   notes.csv        —— 文献笔记表（26 字段）
   search-log.csv   —— 检索日志（可复现"研究空白"判断）
   editions.csv     —— 版本谱系与底本表
@@ -10,7 +11,8 @@
   checklist.md     —— 领域终稿检查表（精简工作版）
 
 用法：
-  python init_review_workspace.py [目标目录] [--topic "主题说明"] [--force]
+  python init_review_workspace.py [目标目录] [--topic "主题说明"]
+                                  [--since 1980] [--until 2025] [--force]
 默认在当前目录下创建 literature-review/。
 默认不覆盖已有文件；加 --force 才覆盖。
 
@@ -20,6 +22,7 @@
 import argparse
 import csv
 import sys
+from datetime import date
 from pathlib import Path
 
 SAMPLE = "【示例，请删除】"
@@ -227,8 +230,8 @@ D. 研究限制：材料不可见、版本未核、语言限制
 
 CHECKLIST = """# 中国古代文学综述：终稿工作检查表（精简版）
 
-> 完整 60 项见 skill 的 `references/checklist-ancient-literature.md`；
-> 通用 90 项见 `references/checklist-self-edit.md`。
+> 完整条目见 skill 的 `references/checklist-ancient-literature.md`（领域 60 项 + 硬伤 10 条 +
+> 附录「语言、格式与程序性检查」20 条）。
 > 每条都要能拿出证据，不能凭感觉打勾。
 
 ## 零、硬伤 10 条（先过这一遍）
@@ -342,6 +345,43 @@ CHECKLIST = """# 中国古代文学综述：终稿工作检查表（精简版）
 3. 如果五年后有人重做这个题目，你的综述还能作为一张有用的地图吗？
 """
 
+PROJECT_TEMPLATE = """# 课题卡
+
+> 这张卡解决一件事：三个月后你（或你的导师）还能一眼看出**当时划定的是什么边界**。
+> 边界一旦移动（换了底本、扩了时段、加了文体），就在这里补一行并注明日期，不要偷偷改大纲。
+
+## 一、主题
+
+{topic}
+
+## 二、三条边界
+
+| 维度 | 本课题的边界 | 不涵盖的部分及理由 |
+|---|---|---|
+| 时间 | __________ | __________ |
+| 对象 | __________ | __________ |
+| 文体 / 材料 | __________ | __________ |
+
+## 三、检索时间范围
+
+**{span}**
+
+> 综述最常被挑的毛病就是"宣称空白却不说明检索到哪一年"。
+> 范围写在这里，结语的"研究空白"才有底气；中途延长了，回来改这一行。
+
+## 四、体例与底本
+
+- 引用体例：脚注（《文学遗产》式）/ GB/T 7714—2025 / 目标刊物指定
+- 底本：__________
+- 参校本：__________
+
+## 五、建卡信息
+
+- 建卡日期：{created}
+- 计划篇幅（字）：__________
+- 写作目的与读者：课程论文 / 学位论文综述章 / 开题报告 / 期刊综述
+"""
+
 OUTLINE_TOPIC_PLACEHOLDER = "（一句话描述性短语，不是标题）"
 
 
@@ -370,7 +410,11 @@ def main() -> int:
         description="初始化中国古代文学文献综述工作目录（六件套）")
     ap.add_argument("target", nargs="?", default="literature-review",
                     help="目标目录（默认 ./literature-review）")
-    ap.add_argument("--topic", default="", help="你的主题说明（写入大纲）")
+    ap.add_argument("--topic", default="", help="你的主题说明（写入大纲与 project.md）")
+    ap.add_argument("--since", default="",
+                    help="检索起始年（如 1980）。与 --until 一起写入 project.md 与检索日志示例行")
+    ap.add_argument("--until", default="",
+                    help="检索截止年（如 2025）。缺省时用当前年份")
     ap.add_argument("--force", action="store_true",
                     help="覆盖已存在的同名文件（默认跳过）")
     args = ap.parse_args()
@@ -378,12 +422,28 @@ def main() -> int:
     out = Path(args.target)
     out.mkdir(parents=True, exist_ok=True)
 
+    # 时间边界：综述最常漏的就是检索时间范围，这里强制留痕
+    until = args.until or str(date.today().year)
+    span = f"{args.since}–{until}" if args.since else f"（起始年待定）–{until}"
+
     outline_text = OUTLINE_TEMPLATE.replace(
         "{topic}", args.topic or OUTLINE_TOPIC_PLACEHOLDER)
+    outline_text = outline_text.replace("> 检索截止日期：__________",
+                                        f"> 检索时间范围：{span}")
+
+    project_text = PROJECT_TEMPLATE.format(
+        topic=args.topic or OUTLINE_TOPIC_PLACEHOLDER,
+        span=span,
+        created=date.today().isoformat(),
+    )
+
+    search_sample = list(SEARCH_LOG_SAMPLE)
+    search_sample[3] = SAMPLE + f"标题+摘要；{span}；中文"
 
     jobs = [
+        ("project.md", lambda p: write_text(p, project_text, args.force)),
         ("notes.csv", lambda p: write_csv(p, NOTES_HEADER, NOTES_SAMPLE, args.force)),
-        ("search-log.csv", lambda p: write_csv(p, SEARCH_LOG_HEADER, SEARCH_LOG_SAMPLE, args.force)),
+        ("search-log.csv", lambda p: write_csv(p, SEARCH_LOG_HEADER, search_sample, args.force)),
         ("editions.csv", lambda p: write_csv(p, EDITIONS_HEADER, EDITIONS_SAMPLE, args.force)),
         ("claims.csv", lambda p: write_csv(p, CLAIMS_HEADER, CLAIMS_SAMPLE, args.force)),
         ("outline.md", lambda p: write_text(p, outline_text, args.force)),
@@ -406,11 +466,12 @@ def main() -> int:
         print("没有新建文件。")
 
     print("\n下一步：")
-    print("  1. 打开 search-log.csv，记录每一次检索。")
-    print("  2. 读一篇文献就填一行 notes.csv；引文先核对再入库。")
-    print("  3. 用 editions.csv 理清底本与参校本的谱系。")
-    print("  4. 用 claims.csv 把论点和证据对齐，防止以论代史。")
-    print("  5. 按 outline.md 写初稿，最后过 checklist.md。")
+    print("  1. 补完 project.md 的三条边界；边界一动就回来改，别偷偷改大纲。")
+    print("  2. 打开 search-log.csv，记录每一次检索（日期必填，否则空白说不清）。")
+    print("  3. 读一篇文献就填一行 notes.csv；引文先核对再入库。")
+    print("  4. 用 editions.csv 理清底本与参校本的谱系。")
+    print("  5. 用 claims.csv 把论点和证据对齐，防止以论代史。")
+    print("  6. 按 outline.md 写初稿，最后过 checklist.md。")
     return 0
 
 

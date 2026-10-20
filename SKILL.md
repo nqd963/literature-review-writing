@@ -1,6 +1,6 @@
 ---
 name: literature-review-writing
-description: 中国古代文学文献综述写作全流程方法论（文献学与文艺学结合）。适用于课程论文综述、学位论文文献综述章、开题报告研究现状、期刊论文综述/研究述评、专题研究述评，覆盖诗、词、文、赋、小说、戏曲、文论及作家、作品、文体、流派、接受史、传播史、学术史等题目。当用户提到"文献综述""研究现状""学术史回顾""研究述评""开题报告""古代文学""古典文学""版本""校勘""辨伪""辑佚""国内外研究现状""literature review"时使用。提供四阶段工作流、两篇已发表范文的完整解剖、古籍与研究文献检索、资料汇编与选本的运用、版本与史料评估、大陆/港台/海外汉学覆盖、三级分类与主题大纲、结语三层写法、脚注与 GB/T 7714—2025 著录、领域检查表与初始化脚本。
+description: 中国古代文学（先秦至近代）文献综述的写作方法论：四阶段工作流、领域结构范式、版本与引文体例、领域检查表。用于课程论文综述、学位论文综述章、开题报告的"研究现状"、期刊综述与专题研究述评。当用户要写或改写"文献综述""研究现状""学术史回顾""研究述评"，或问"综述结构怎么搭""研究空白怎么论证""结语怎么写""国内外研究现状怎么组织"时使用。不适用于单条版本鉴定、字词校勘、古籍标点，也不替代检索工具本身。
 ---
 
 # 中国古代文学文献综述写作
@@ -76,14 +76,16 @@ description: 中国古代文学文献综述写作全流程方法论（文献学�
 1. **先确认写作目的与读者**（课程论文 / 学位论文 / 开题 / 期刊投稿），据此决定篇幅、覆盖面与文风。
 2. 读 [references/domain-ancient-literature.md](references/domain-ancient-literature.md) — 领域地图：综述类型、选题入口、时段与文体差异、**结构范式（外层骨架 + 内层展开手法两层）**、学术史写法、投稿体裁要件（摘要/关键词/引言）、常见硬伤。**任何题目都建议先读这一份。**
 3. 读 [references/search-resources.md](references/search-resources.md) — 古籍库、研究数据库、海外汉学资源、关键词矩阵、引文追踪、检索日志。产出：**原典清单 + 研究文献清单 + 可复查的检索日志**。
+   **能调用工具就别手抄**：如果当前环境已挂载可用的检索类能力（数据库连接器、文献管理插件、浏览器自动化、PDF 解析工具），就用它完成检索、批量导出题录、取全文与 OCR，把检索式、限定条件、命中数和执行日期原样记进 `search-log.csv`。手抄题录不但慢，还会在作者名、卷次、页码上引入你事后查不出的错。**没有相应工具时不要硬凑**——按文件里的公开入口手检，同样要把过程记进日志。工具给的是**线索与题录**，不是引文依据：凡要写进正文的原文，仍须回到影像、原书或权威整理本核对（见"版本意识是底线"）。
 4. 读 [references/academic-history-and-overseas.md](references/academic-history-and-overseas.md) — 20 世纪以来的学术史脉络、代表成果、核心期刊、大陆/港台/日本/欧美的研究传统。产出：**学术史地图**。
-5. 读 [references/stage1-search.md](references/stage1-search.md) — 通用检索与选题步骤（第 2–4 章），再用领域文件覆盖其数据库与时效性默认值。
+5. 读 [references/stage1-search.md](references/stage1-search.md) — 检索与选题的通用步骤，再用领域文件覆盖其数据库与时效性默认值。
 6. 读 [references/stage2-analysis.md](references/stage2-analysis.md) 与 [references/editions-and-citations.md](references/editions-and-citations.md) — 逐篇分析、版本与史料评估、引文规范。产出：**笔记表 + 版本表 + 论点—证据表 + 争议表**。
 7. **不确定综述长什么样时，先读 [references/worked-examples.md](references/worked-examples.md)** — 解剖两篇已发表的综述（陆游篇通代长时段 / 贾谊篇断代专题），含实操配方、每段标准写法、结语三层、完整提纲模板、十步 SOP。**这一份最容易照着做。**
+   **动笔写正文前，先读 [references/model-passage.md](references/model-passage.md)** 的示范段落，按它的句式、脚注体例与"问题化 → 对比 → 节点 → 归纳 → 判断"的顺序写，并用同文件的逐句批注与反面对照自检。
 8. 读 [references/stage3-drafting.md](references/stage3-drafting.md) 与 [references/templates-domain.md](references/templates-domain.md) — 综合、句式、大纲骨架；**结构范式与学术史写法以 `domain-ancient-literature.md` 第五、六节为准**，`stage3-drafting.md` 只保留写作动作层面的落笔细节。产出：**主题大纲 → 初稿**。
-8. 读 [references/stage4-editing.md](references/stage4-editing.md) — 修改、脚注、参考文献、引文核对。
-9. 定稿前逐条过 [references/checklist-ancient-literature.md](references/checklist-ancient-literature.md)（领域 60 项）与 [references/checklist-self-edit.md](references/checklist-self-edit.md)（通用 90 项）。两者冲突时以领域检查表为准。
-10. 需要通用模板时读 [references/templates.md](references/templates.md)；需要古代文学专用表式、大纲与句式时读 [references/templates-domain.md](references/templates-domain.md)。
+9. 读 [references/stage4-editing.md](references/stage4-editing.md) — 修改、脚注、参考文献、引文核对。
+10. 定稿前逐条过 [references/checklist-ancient-literature.md](references/checklist-ancient-literature.md)（领域检查表）。语言、格式与程序性检查见同文件的附录部分；两者冲突时以领域条目为准。
+11. 需要古代文学专用表式、大纲与句式时读 [references/templates-domain.md](references/templates-domain.md)。
 
 用户只问某一环节时，**只读对应文件**，不要一次全读。
 
@@ -91,6 +93,7 @@ description: 中国古代文学文献综述写作全流程方法论（文献学�
 
 用户要从零开始写一篇综述时，先跑初始化脚本，一次性生成：
 
+- `project.md` — 课题卡：主题 + 三条边界（时间 / 对象 / 文体材料）+ 检索时间范围 + 建卡日期
 - `notes.csv` — 古代文学专用文献笔记表（26 字段 + 示例行）
 - `search-log.csv` — 检索日志
 - `editions.csv` — 版本谱系表
@@ -99,8 +102,11 @@ description: 中国古代文学文献综述写作全流程方法论（文献学�
 - `checklist.md` — 领域速查清单
 
 ```bash
-python <skill>/scripts/init_review_workspace.py <目标目录> --topic "研究对象、时段与核心问题"
+python <skill>/scripts/init_review_workspace.py <目标目录> \
+  --topic "研究对象、时段与核心问题" --since 1980 --until 2025
 ```
+
+`--since` / `--until` 是检索时间范围，会同时写进 `project.md`、`outline.md` 与检索日志的示例行。**这是最常被漏、也最容易被答辩追问的一项**：宣称"研究空白"却不能说出检索到哪一年，等于没检索。省略 `--until` 时默认取当前年份。
 
 仅用标准库，无依赖；CSV 带 UTF-8 BOM，Excel 双击不乱码。默认不覆盖已有文件；确需覆盖时加 `--force`。
 
